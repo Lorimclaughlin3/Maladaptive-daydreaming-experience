@@ -14,6 +14,8 @@
 (set: $cerealDone to false)
 (set: $breakfastDone to false)
 (set: $dressedDone to false)
+(set: $jeansDone to false)
+(set: $trousersDone to false)
 
 {
 &lt;style&gt;
@@ -57,7 +59,7 @@ z-index:10;
 opacity:0.85;
 width:260px;
 &quot;&gt;
-  &lt;source src=&quot;audio/audio/chill_background-dreamy-mood-130844 (1).mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+  &lt;source src=&quot;audio/dream.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
 &lt;div style=&quot;
@@ -435,42 +437,58 @@ You’re not even tired.&lt;br&gt;&lt;br&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 }</tw-passagedata><tw-passagedata pid="5" name="Get dressed" tags="" position="925,550" size="100,100">{
-&lt;div style=&quot;
-position:fixed;
+(set: $jeansDone to $jeansDone or false)
+(set: $trousersDone to $trousersDone or false)
+
+&lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
+
+&lt;img src=&quot;images/wardrobe.jpg&quot; style=&quot;
+position:absolute;
 top:0;
 left:0;
 width:100vw;
 height:100vh;
-overflow:hidden;
-&quot;&gt;
-
-&lt;img src=&quot;images/wardrobe.jpg&quot; style=&quot;
-width:100%;
-height:100%;
 object-fit:cover;
-filter:brightness(0.48);
+filter:brightness(0.6);
 &quot;&gt;
 
 &lt;style&gt;
 .choice {
-  padding:12px 24px;
+  padding:12px 22px;
   border:1px solid white;
   border-radius:8px;
   cursor:pointer;
   transition:0.2s;
   color:white;
-  background:rgba(0,0,0,0.4);
+  background:rgba(0,0,0,0.35);
+  display:inline-block;
+  margin:6px;
 }
-
 .choice:hover {
   background:white;
   color:black;
   transform:scale(1.05);
 }
-
 tw-link {
   text-decoration:none;
   color:inherit;
+}
+
+.dead {
+  opacity:0.35;
+  pointer-events:none;
+}
+
+.failed {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%) rotate(-15deg);
+  font-size:28px;
+  color:red;
+  font-weight:bold;
+  text-shadow:0 0 10px black;
+  pointer-events:none;
 }
 &lt;/style&gt;
 
@@ -479,35 +497,47 @@ position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%, -50%);
-width:70%;
-max-width:650px;
+width:65%;
+max-width:520px;
 text-align:center;
 color:white;
 text-shadow:0 0 14px black;
-background:rgba(0,0,0,0.42);
-padding:30px;
-border-radius:12px;
+background:rgba(0,0,0,0.3);
+padding:22px;
+border-radius:10px;
+font-size:16px;
+line-height:1.3;
 &quot;&gt;
 
-&lt;div style=&quot;font-size:26px; margin-bottom:15px;&quot;&gt;
-Okay.
-&lt;/div&gt;
+You open your wardrobe.
 
-&lt;div style=&quot;font-size:18px; line-height:1.5; margin-bottom:25px;&quot;&gt;
-Let’s not waste too much time here.&lt;br&gt;&lt;br&gt;
-You just need to get dressed.&lt;br&gt;&lt;br&gt;
-What are you feeling today?
-&lt;/div&gt;
+&lt;br&gt;&lt;br&gt;
 
-&lt;div style=&quot;
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-&quot;&gt;
+You need to get dressed.
 
-&lt;div class=&quot;choice&quot;&gt;[[Jeans]]&lt;/div&gt;
-&lt;div class=&quot;choice&quot;&gt;[[Trousers]]&lt;/div&gt;
+&lt;br&gt;&lt;br&gt;
+
+&lt;div style=&quot;display:flex;justify-content:center;gap:30px;flex-wrap:wrap;&quot;&gt;
+
+(if: $jeansDone is true)[
+  &lt;div style=&quot;position:relative;&quot;&gt;
+    &lt;div class=&quot;choice dead&quot;&gt;Jeans&lt;/div&gt;
+    &lt;div class=&quot;failed&quot;&gt;FAILED&lt;/div&gt;
+  &lt;/div&gt;
+]
+(else:)[
+  &lt;div class=&quot;choice&quot;&gt;[[Jeans]]&lt;/div&gt;
+]
+
+(if: $trousersDone is true)[
+  &lt;div style=&quot;position:relative;&quot;&gt;
+    &lt;div class=&quot;choice dead&quot;&gt;Trousers&lt;/div&gt;
+    &lt;div class=&quot;failed&quot;&gt;FAILED&lt;/div&gt;
+  &lt;/div&gt;
+]
+(else:)[
+  &lt;div class=&quot;choice&quot;&gt;[[Trousers]]&lt;/div&gt;
+]
 
 &lt;/div&gt;
 
@@ -2726,95 +2756,9 @@ Too many mouths.
 
 &lt;/div&gt;
 &lt;/div&gt;
-}</tw-passagedata><tw-passagedata pid="30" name="Jeans" tags="" position="775,625" size="100,100">{
-&lt;div style=&quot;
-position:fixed;
-top:0;
-left:0;
-width:100vw;
-height:100vh;
-overflow:hidden;
-&quot;&gt;
-
-&lt;!-- IMAGE --&gt;
-&lt;img src=&quot;images/wardrobe.jpg&quot; style=&quot;
-position:absolute;
-top:0;
-left:0;
-width:100vw;
-height:100vh;
-object-fit:cover;
-object-position:center;
-filter:brightness(0.5);
-&quot;&gt;
-
-&lt;style&gt;
-.choice {
-  padding:12px 24px;
-  border:1px solid white;
-  border-radius:8px;
-  cursor:pointer;
-  transition:0.2s;
-  color:white;
-  background:rgba(0,0,0,0.4);
-}
-
-.choice:hover {
-  background:white;
-  color:black;
-  transform:scale(1.05);
-}
-
-tw-link {
-  text-decoration:none;
-  color:inherit;
-}
-&lt;/style&gt;
-
-&lt;!-- PANEL --&gt;
-&lt;div style=&quot;
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%, -50%);
-width:70%;
-max-width:650px;
-text-align:center;
-color:white;
-text-shadow:0 0 14px black;
-background:rgba(0,0,0,0.42);
-padding:30px;
-border-radius:12px;
-&quot;&gt;
-
-&lt;div style=&quot;font-size:18px; line-height:1.6; margin-bottom:25px;&quot;&gt;
-
-You hold them up in front of you.&lt;br&gt;&lt;br&gt;
-
-They look good.&lt;br&gt;
-Better than you expected.&lt;br&gt;&lt;br&gt;
-
-Like you could actually go somewhere.&lt;br&gt;&lt;br&gt;
-
-Like someone’s already waiting.
-
-&lt;/div&gt;
-
-&lt;div style=&quot;
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-&quot;&gt;
-
-&lt;div class=&quot;choice&quot;&gt;[[Pull them on-&gt;Pull them on]]&lt;/div&gt;
-&lt;div class=&quot;choice&quot;&gt;[[Check who’s waiting]]&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-}</tw-passagedata><tw-passagedata pid="31" name="Trousers" tags="" position="775,475" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="30" name="Jeans" tags="" position="775,625" size="100,100">{ (set: $jeansDone to true) (set: $dressedDone to true) &lt;div style=&quot; position:fixed; top:0; left:0; width:100vw; height:100vh; overflow:hidden; &quot;&gt; &lt;!-- IMAGE --&gt; &lt;img src=&quot;images/wardrobe.jpg&quot; style=&quot; position:absolute; top:0; left:0; width:100vw; height:100vh; object-fit:cover; object-position:center; filter:brightness(0.5); &quot;&gt; &lt;style&gt; .choice { padding:12px 24px; border:1px solid white; border-radius:8px; cursor:pointer; transition:0.2s; color:white; background:rgba(0,0,0,0.4); } .choice:hover { background:white; color:black; transform:scale(1.05); } tw-link { text-decoration:none; color:inherit; } &lt;/style&gt; &lt;!-- PANEL --&gt; &lt;div style=&quot; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:70%; max-width:650px; text-align:center; color:white; text-shadow:0 0 14px black; background:rgba(0,0,0,0.42); padding:30px; border-radius:12px; &quot;&gt; &lt;div style=&quot;font-size:18px; line-height:1.6; margin-bottom:25px;&quot;&gt; You hold them up in front of you.&lt;br&gt;&lt;br&gt; They look good.&lt;br&gt; Better than you expected.&lt;br&gt;&lt;br&gt; Like you could actually go somewhere.&lt;br&gt;&lt;br&gt; Like someone’s already waiting. &lt;/div&gt; &lt;div style=&quot; display:flex; justify-content:center; gap:30px; flex-wrap:wrap; &quot;&gt; &lt;div class=&quot;choice&quot;&gt;[[Pull them on-&gt;Pull them on]]&lt;/div&gt; &lt;div class=&quot;choice&quot;&gt;[[Check who’s waiting]]&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; }</tw-passagedata><tw-passagedata pid="31" name="Trousers" tags="" position="775,475" size="100,100">{
+(set: $trousersDone to true)
+(set: $dressedDone to true)
 &lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
 
 &lt;img src=&quot;images/wardrobe.jpg&quot; style=&quot;
@@ -3961,18 +3905,61 @@ You’ve lost so much time.
 &lt;/div&gt;
 &lt;/div&gt;
 }</tw-passagedata><tw-passagedata pid="43" name="Boardroom" tags="" position="475,550" size="100,100">{
-&lt;style&gt;
-body {
-background-image: url(&quot;images/boardroom.jpg&quot;);
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-}
-&lt;/style&gt;
+&lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
+
+&lt;img src=&quot;images/boardroom.jpg&quot; style=&quot;
+position:absolute;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+object-fit:cover;
+filter:brightness(0.5);
+&quot;&gt;
 
 &lt;audio autoplay loop&gt;
   &lt;source src=&quot;audio/boardroom.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
+
+&lt;style&gt;
+.choice {
+  padding:10px 20px;
+  border:1px solid white;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.2s;
+  color:white;
+  background:rgba(0,0,0,0.35);
+  display:inline-block;
+  margin:8px;
+}
+.choice:hover {
+  background:white;
+  color:black;
+  transform:scale(1.05);
+}
+tw-link {
+  text-decoration:none;
+  color:inherit;
+}
+&lt;/style&gt;
+
+&lt;div style=&quot;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+width:65%;
+max-width:540px;
+text-align:center;
+color:white;
+text-shadow:0 0 14px black;
+background:rgba(0,0,0,0.35);
+padding:22px;
+border-radius:10px;
+font-size:16px;
+line-height:1.35;
+&quot;&gt;
 
 Phones ringing.
 
@@ -4004,39 +3991,44 @@ This is it.
 
 &lt;div class=&quot;choice&quot;&gt;[[We need to cut staff-&gt;Fire Decision]]&lt;/div&gt;
 &lt;div class=&quot;choice&quot;&gt;[[We can save everyone-&gt;Compassion]]&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
 }</tw-passagedata><tw-passagedata pid="44" name="Compassion" tags="" position="450,400" size="100,100">{
 &lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
 
-&lt;img src=&quot;images/boardroom.jpg&quot; style=&quot;
-position:absolute;
-top:0;
-left:0;
-width:100vw;
-height:100vh;
-object-fit:cover;
-filter:brightness(0.5);
-&quot;&gt;
+&lt;img src=&quot;images/boardroom.jpg&quot; style=&quot;position:absolute;top:0;left:0;width:100vw;height:100vh;object-fit:cover;filter:brightness(0.5);&quot;&gt;
 
 &lt;audio autoplay loop&gt;
   &lt;source src=&quot;audio/boardroom.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
-&lt;div style=&quot;
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%, -50%);
-width:65%;
-max-width:520px;
-text-align:center;
-color:white;
-text-shadow:0 0 14px black;
-background:rgba(0,0,0,0.32);
-padding:16px;
-border-radius:10px;
-font-size:14.5px;
-line-height:1.2;
-&quot;&gt;
+&lt;style&gt;
+.choice {
+  padding:10px 20px;
+  border:1px solid white;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.2s;
+  color:white;
+  background:rgba(0,0,0,0.35);
+  display:inline-block;
+  margin:6px;
+}
+.choice:hover {
+  background:white;
+  color:black;
+  transform:scale(1.05);
+}
+tw-link {
+  text-decoration:none;
+  color:inherit;
+}
+&lt;/style&gt;
+
+&lt;div style=&quot;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);
+width:65%;max-width:520px;text-align:center;color:white;
+background:rgba(0,0,0,0.35);padding:20px;border-radius:10px;&quot;&gt;
 
 You shake your head.
 
@@ -4074,34 +4066,28 @@ The numbers don’t add up.
 
 &lt;br&gt;&lt;br&gt;
 
-&lt;div class=&quot;choice&quot;&gt;[[Move money around-&gt;Compassion Fix]]&lt;/div&gt;
-&lt;div class=&quot;choice&quot;&gt;[[Stand by your decision-&gt;Compassion Hold]]&lt;/div&gt;
+&lt;div style=&quot;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;&quot;&gt;
+  &lt;div class=&quot;choice&quot;&gt;[[Move money around-&gt;Compassion Fix]]&lt;/div&gt;
+  &lt;div class=&quot;choice&quot;&gt;[[Stand by your decision-&gt;Compassion Hold]]&lt;/div&gt;
+&lt;/div&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
 }</tw-passagedata><tw-passagedata pid="45" name="Fire Decision" tags="" position="225,450" size="100,100">{
-&lt;div style=&quot;
-position:fixed;
-top:0;
-left:0;
-width:100vw;
-height:100vh;
-overflow:hidden;
-&quot;&gt;
+&lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
 
-&lt;img src=&quot;images/boardroom.jpg&quot; style=&quot;
+&lt;img src=&quot;images/boardroom2.jpg&quot; style=&quot;
 position:absolute;
 top:0;
 left:0;
 width:100vw;
 height:100vh;
 object-fit:cover;
-object-position:center;
-filter:brightness(0.55);
+filter:brightness(0.4);
 &quot;&gt;
 
 &lt;audio autoplay loop&gt;
-  &lt;source src=&quot;audio/boardroom.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+  &lt;source src=&quot;audio/ruthless.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
 &lt;style&gt;
@@ -4112,15 +4098,15 @@ filter:brightness(0.55);
   cursor:pointer;
   transition:0.2s;
   color:white;
-  background:rgba(0,0,0,0.25);
+  background:rgba(0,0,0,0.35);
+  display:inline-block;
+  margin:8px;
 }
-
 .choice:hover {
   background:white;
   color:black;
   transform:scale(1.05);
 }
-
 tw-link {
   text-decoration:none;
   color:inherit;
@@ -4132,24 +4118,19 @@ position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%, -50%);
-width:60%;
-max-width:520px;
+width:65%;
+max-width:540px;
 text-align:center;
 color:white;
 text-shadow:0 0 14px black;
-background:rgba(0,0,0,0.28);
-backdrop-filter:blur(3px);
+background:rgba(0,0,0,0.32);
 padding:20px;
 border-radius:10px;
-font-size:17px;
-line-height:1.4;
+font-size:15px;
+line-height:1.3;
 &quot;&gt;
 
 You know what has to be done.
-
-&lt;br&gt;&lt;br&gt;
-
-The room is waiting.
 
 &lt;br&gt;&lt;br&gt;
 
@@ -4161,9 +4142,11 @@ Margaret.
 
 &lt;br&gt;&lt;br&gt;
 
-She’s been here for over 25 years.&lt;br&gt;
-Knows the company inside out.&lt;br&gt;
-Like a mother to the place.
+Been here over 25 years.
+
+&lt;br&gt;&lt;br&gt;
+
+Like a mother to the company.
 
 &lt;br&gt;&lt;br&gt;
 
@@ -4171,9 +4154,7 @@ Or Peter.
 
 &lt;br&gt;&lt;br&gt;
 
-Only here three years.&lt;br&gt;
-Young. Eager.&lt;br&gt;
-Quick to learn.
+Young. Eager. Quick to learn.
 
 &lt;br&gt;&lt;br&gt;
 
@@ -4181,12 +4162,8 @@ Both of them are looking at you.
 
 &lt;br&gt;&lt;br&gt;
 
-&lt;div style=&quot;display:flex;justify-content:center;gap:15px;flex-wrap:wrap;&quot;&gt;
-
 &lt;div class=&quot;choice&quot;&gt;[[Let Margaret go-&gt;Fire Margaret]]&lt;/div&gt;
 &lt;div class=&quot;choice&quot;&gt;[[Let Peter go-&gt;Fire Peter]]&lt;/div&gt;
-
-&lt;/div&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -4207,13 +4184,36 @@ filter:brightness(0.4);
   &lt;source src=&quot;audio/ruthless.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
+&lt;style&gt;
+.choice {
+  padding:10px 20px;
+  border:1px solid white;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.2s;
+  color:white;
+  background:rgba(0,0,0,0.35);
+  display:inline-block;
+  margin:8px;
+}
+.choice:hover {
+  background:white;
+  color:black;
+  transform:scale(1.05);
+}
+tw-link {
+  text-decoration:none;
+  color:inherit;
+}
+&lt;/style&gt;
+
 &lt;div style=&quot;
 position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%, -50%);
 width:65%;
-max-width:520px;
+max-width:540px;
 text-align:center;
 color:white;
 text-shadow:0 0 14px black;
@@ -4286,13 +4286,36 @@ filter:brightness(0.4);
   &lt;source src=&quot;audio/ruthless.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
+&lt;style&gt;
+.choice {
+  padding:10px 20px;
+  border:1px solid white;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.2s;
+  color:white;
+  background:rgba(0,0,0,0.35);
+  display:inline-block;
+  margin:8px;
+}
+.choice:hover {
+  background:white;
+  color:black;
+  transform:scale(1.05);
+}
+tw-link {
+  text-decoration:none;
+  color:inherit;
+}
+&lt;/style&gt;
+
 &lt;div style=&quot;
 position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%, -50%);
 width:65%;
-max-width:520px;
+max-width:540px;
 text-align:center;
 color:white;
 text-shadow:0 0 14px black;
@@ -4347,36 +4370,15 @@ You don’t.
 }</tw-passagedata><tw-passagedata pid="48" name="Ruthless Deal" tags="" position="450,100" size="100,100">{
 &lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
 
-&lt;img src=&quot;images/deal.jpg&quot; style=&quot;
-position:absolute;
-top:0;
-left:0;
-width:100vw;
-height:100vh;
-object-fit:cover;
-filter:brightness(0.6);
-&quot;&gt;
+&lt;img src=&quot;images/deal.jpg&quot; style=&quot;position:absolute;top:0;left:0;width:100vw;height:100vh;object-fit:cover;filter:brightness(0.6);&quot;&gt;
 
 &lt;audio autoplay loop&gt;
-  &lt;source src=&quot;audio/success.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+  &lt;source src=&quot;audio/success.mp3&quot;&gt;
 &lt;/audio&gt;
 
-&lt;div style=&quot;
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%, -50%);
-width:65%;
-max-width:520px;
-text-align:center;
-color:white;
-text-shadow:0 0 14px black;
-background:rgba(0,0,0,0.25);
-padding:22px;
-border-radius:10px;
-font-size:16px;
-line-height:1.35;
-&quot;&gt;
+&lt;div style=&quot;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);
+width:65%;max-width:520px;text-align:center;color:white;
+background:rgba(0,0,0,0.35);padding:20px;border-radius:10px;&quot;&gt;
 
 The deal goes through.
 
@@ -4390,85 +4392,38 @@ Controlled.
 
 &lt;br&gt;&lt;br&gt;
 
-The company stays afloat.
+The company survives.
 
 &lt;br&gt;&lt;br&gt;
 
-You stay in power.
+They listen now.
 
 &lt;br&gt;&lt;br&gt;
 
-No one questions you now.
+But they don’t look at you.
 
 &lt;br&gt;&lt;br&gt;
 
-They listen.
-
-&lt;br&gt;&lt;br&gt;
-
-But no one meets your eyes.
-
-&lt;br&gt;&lt;br&gt;
-
-&lt;div class=&quot;choice&quot;&gt;[[Get back to work-&gt;Trousers End]]&lt;/div&gt;
+&lt;div style=&quot;display:flex;justify-content:center;&quot;&gt;
+  &lt;div class=&quot;choice&quot;&gt;[[Get back to work-&gt;Trousers End]]&lt;/div&gt;
+&lt;/div&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
 }</tw-passagedata><tw-passagedata pid="49" name="Fire Both" tags="" position="250,75" size="100,100">{
 &lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
 
-&lt;img src=&quot;images/deal.jpg&quot; style=&quot;
-position:absolute;
-top:0;
-left:0;
-width:100vw;
-height:100vh;
-object-fit:cover;
-filter:brightness(0.6);
-&quot;&gt;
+&lt;img src=&quot;images/deal.jpg&quot; style=&quot;position:absolute;top:0;left:0;width:100vw;height:100vh;object-fit:cover;filter:brightness(0.6);&quot;&gt;
 
 &lt;audio autoplay loop&gt;
-  &lt;source src=&quot;audio/success.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+  &lt;source src=&quot;audio/success.mp3&quot;&gt;
 &lt;/audio&gt;
 
-&lt;div style=&quot;
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%, -50%);
-width:65%;
-max-width:500px;
-text-align:center;
-color:white;
-text-shadow:0 0 14px black;
-background:rgba(0,0,0,0.28);
-padding:14px;
-border-radius:10px;
-font-size:14px;
-line-height:1.2;
-&quot;&gt;
-
-You look at them.
-
-&lt;br&gt;&lt;br&gt;
-
-Margaret. Peter.
-
-&lt;br&gt;&lt;br&gt;
-
-You could stop.
-
-&lt;br&gt;&lt;br&gt;
-
-You don’t.
-
-&lt;br&gt;&lt;br&gt;
+&lt;div style=&quot;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);
+width:65%;max-width:520px;text-align:center;color:white;
+background:rgba(0,0,0,0.35);padding:20px;border-radius:10px;&quot;&gt;
 
 “Both of you.”
-
-&lt;br&gt;&lt;br&gt;
-
-Silence.
 
 &lt;br&gt;&lt;br&gt;
 
@@ -4476,11 +4431,7 @@ They leave.
 
 &lt;br&gt;&lt;br&gt;
 
-No questions.
-
-&lt;br&gt;&lt;br&gt;
-
-Just gone.
+No hesitation.
 
 &lt;br&gt;&lt;br&gt;
 
@@ -4492,91 +4443,26 @@ Everything changes.
 
 &lt;br&gt;&lt;br&gt;
 
-Your life—different now.
+You’re in control now.
 
 &lt;br&gt;&lt;br&gt;
 
-You have control.
-
-&lt;br&gt;&lt;br&gt;
-
-...
-
-&lt;br&gt;&lt;br&gt;
-
-You don’t think about them.
-
-&lt;br&gt;&lt;br&gt;
-
-&lt;div class=&quot;choice&quot;&gt;[[Remain in control-&gt;Trousers End]]&lt;/div&gt;
+&lt;div style=&quot;display:flex;justify-content:center;&quot;&gt;
+  &lt;div class=&quot;choice&quot;&gt;[[Remain Control-&gt;Trousers End]]&lt;/div&gt;
+&lt;/div&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
 }</tw-passagedata><tw-passagedata pid="50" name="Trousers End" tags="" position="650,25" size="100,100">{
 &lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
 
-&lt;img src=&quot;images/wardrobe.jpg&quot; style=&quot;
-position:absolute;
-top:0;
-left:0;
-width:100vw;
-height:100vh;
-object-fit:cover;
-object-position:center;
-filter:brightness(0.55);
-&quot;&gt;
+&lt;img src=&quot;images/wardrobe.jpg&quot; style=&quot;position:absolute;top:0;left:0;width:100vw;height:100vh;object-fit:cover;filter:brightness(0.5);&quot;&gt;
 
-&lt;div style=&quot;
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%, -50%);
-width:60%;
-max-width:520px;
-text-align:center;
-color:white;
-text-shadow:0 0 14px black;
-background:rgba(0,0,0,0.28);
-backdrop-filter:blur(3px);
-padding:20px;
-border-radius:10px;
-font-size:17px;
-line-height:1.4;
-&quot;&gt;
+&lt;div style=&quot;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);
+width:65%;max-width:520px;text-align:center;color:white;
+background:rgba(0,0,0,0.35);padding:20px;border-radius:10px;&quot;&gt;
 
 You blink.
-
-&lt;br&gt;&lt;br&gt;
-
-...
-
-&lt;br&gt;&lt;br&gt;
-
-You’re still standing there.
-
-&lt;br&gt;&lt;br&gt;
-
-Trousers half on.
-
-&lt;br&gt;&lt;br&gt;
-
-Nothing’s changed.
-
-&lt;br&gt;&lt;br&gt;
-
-No boardroom.
-
-&lt;br&gt;&lt;br&gt;
-
-No deal.
-
-&lt;br&gt;&lt;br&gt;
-
-No one watching you.
-
-&lt;br&gt;&lt;br&gt;
-
-Just your room.
 
 &lt;br&gt;&lt;br&gt;
 
@@ -4584,47 +4470,44 @@ You’re still here.
 
 &lt;br&gt;&lt;br&gt;
 
-You were supposed to get dressed.
+Trousers half on.
 
 &lt;br&gt;&lt;br&gt;
 
-&lt;div class=&quot;choice&quot;&gt;[[Back-&gt;Get dressed]]&lt;/div&gt;
+No deal.
+
+&lt;br&gt;&lt;br&gt;
+
+No boardroom.
+
+&lt;br&gt;&lt;br&gt;
+
+Just your room.
+
+&lt;br&gt;&lt;br&gt;
+
+You were meant to get dressed.
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;div style=&quot;display:flex;justify-content:center;&quot;&gt;
+  &lt;div class=&quot;choice&quot;&gt;[[Back-&gt;Get dressed]]&lt;/div&gt;
+&lt;/div&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
 }</tw-passagedata><tw-passagedata pid="51" name="Compassion Fix" tags="" position="650,175" size="100,100">{
 &lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
 
-&lt;img src=&quot;images/boardroom2.jpg&quot; style=&quot;
-position:absolute;
-top:0;
-left:0;
-width:100vw;
-height:100vh;
-object-fit:cover;
-filter:brightness(0.4);
-&quot;&gt;
+&lt;img src=&quot;images/boardroom2.jpg&quot; style=&quot;position:absolute;top:0;left:0;width:100vw;height:100vh;object-fit:cover;filter:brightness(0.4);&quot;&gt;
 
 &lt;audio autoplay loop&gt;
-  &lt;source src=&quot;audio/ruthless.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+  &lt;source src=&quot;audio/ruthless.mp3&quot;&gt;
 &lt;/audio&gt;
 
-&lt;div style=&quot;
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%, -50%);
-width:65%;
-max-width:520px;
-text-align:center;
-color:white;
-text-shadow:0 0 14px black;
-background:rgba(0,0,0,0.32);
-padding:16px;
-border-radius:10px;
-font-size:14.5px;
-line-height:1.2;
-&quot;&gt;
+&lt;div style=&quot;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);
+width:65%;max-width:520px;text-align:center;color:white;
+background:rgba(0,0,0,0.35);padding:20px;border-radius:10px;&quot;&gt;
 
 You move money around.
 
@@ -4650,7 +4533,9 @@ The deal slips.
 
 &lt;br&gt;&lt;br&gt;
 
-&lt;div class=&quot;choice&quot;&gt;[[Keep trying-&gt;Compassion Collapse]]&lt;/div&gt;
+&lt;div style=&quot;display:flex;justify-content:center;&quot;&gt;
+  &lt;div class=&quot;choice&quot;&gt;[[Keep trying-&gt;Compassion Collapse]]&lt;/div&gt;
+&lt;/div&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -4668,8 +4553,31 @@ filter:brightness(0.4);
 &quot;&gt;
 
 &lt;audio autoplay loop&gt;
-  &lt;source src=&quot;audio/ruthless.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+  &lt;source src=&quot;audio/ruthless.mp3&quot;&gt;
 &lt;/audio&gt;
+
+&lt;style&gt;
+.choice {
+  padding:10px 20px;
+  border:1px solid white;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.2s;
+  color:white;
+  background:rgba(0,0,0,0.35);
+  display:inline-block;
+  margin:6px;
+}
+.choice:hover {
+  background:white;
+  color:black;
+  transform:scale(1.05);
+}
+tw-link {
+  text-decoration:none;
+  color:inherit;
+}
+&lt;/style&gt;
 
 &lt;div style=&quot;
 position:absolute;
@@ -4680,12 +4588,9 @@ width:65%;
 max-width:520px;
 text-align:center;
 color:white;
-text-shadow:0 0 14px black;
-background:rgba(0,0,0,0.32);
-padding:16px;
+background:rgba(0,0,0,0.35);
+padding:20px;
 border-radius:10px;
-font-size:14.5px;
-line-height:1.2;
 &quot;&gt;
 
 You stand firm.
@@ -4696,11 +4601,11 @@ No cuts.
 
 &lt;br&gt;&lt;br&gt;
 
-No changes.
+No compromise.
 
 &lt;br&gt;&lt;br&gt;
 
-The room turns.
+The room shifts.
 
 &lt;br&gt;&lt;br&gt;
 
@@ -4712,43 +4617,25 @@ You feel it slipping.
 
 &lt;br&gt;&lt;br&gt;
 
-&lt;div class=&quot;choice&quot;&gt;[[Hold on-&gt;Compassion Collapse]]&lt;/div&gt;
+&lt;div style=&quot;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;&quot;&gt;
+  &lt;div class=&quot;choice&quot;&gt;[[Hold your ground-&gt;Compassion Collapse]]&lt;/div&gt;
+  &lt;div class=&quot;choice&quot;&gt;[[Try to reassure them-&gt;Compassion Collapse]]&lt;/div&gt;
+&lt;/div&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
 }</tw-passagedata><tw-passagedata pid="53" name="Compassion Collapse" tags="" position="800,300" size="100,100">{
 &lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
 
-&lt;img src=&quot;images/boardroom2.jpg&quot; style=&quot;
-position:absolute;
-top:0;
-left:0;
-width:100vw;
-height:100vh;
-object-fit:cover;
-filter:brightness(0.35);
-&quot;&gt;
+&lt;img src=&quot;images/pack.jpg&quot; style=&quot;position:absolute;top:0;left:0;width:100vw;height:100vh;object-fit:cover;filter:brightness(0.35);&quot;&gt;
 
 &lt;audio autoplay loop&gt;
-  &lt;source src=&quot;audio/ruthless.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+  &lt;source src=&quot;audio/success.mp3&quot;&gt;
 &lt;/audio&gt;
 
-&lt;div style=&quot;
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%, -50%);
-width:65%;
-max-width:520px;
-text-align:center;
-color:white;
-text-shadow:0 0 14px black;
-background:rgba(0,0,0,0.32);
-padding:16px;
-border-radius:10px;
-font-size:14.5px;
-line-height:1.2;
-&quot;&gt;
+&lt;div style=&quot;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);
+width:65%;max-width:520px;text-align:center;color:white;
+background:rgba(0,0,0,0.35);padding:20px;border-radius:10px;&quot;&gt;
 
 The deal is gone.
 
@@ -4778,14 +4665,16 @@ Now no one is safe.
 
 &lt;br&gt;&lt;br&gt;
 
-&lt;div class=&quot;choice&quot;&gt;[[Pack your things-&gt;Trousers End]]&lt;/div&gt;
+&lt;div style=&quot;display:flex;justify-content:center;&quot;&gt;
+  &lt;div class=&quot;choice&quot;&gt;[[Pack Your Things-&gt;Trousers End]]&lt;/div&gt;
+&lt;/div&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
 }</tw-passagedata><tw-passagedata pid="54" name="pre start screen" tags="" position="1050,25" size="100,100">{
 &lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
 
-&lt;img src=&quot;dreamroom.jpg&quot; style=&quot;
+&lt;img src=&quot;images/dreamroom.jpg&quot; style=&quot;
 position:absolute;
 top:0;
 left:0;
