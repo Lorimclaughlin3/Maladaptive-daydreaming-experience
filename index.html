@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Maladaptive daydreaming.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Maladaptive daydreaming" startnode="1" creator="Twine" creator-version="2.12.0" format="Harlowe" format-version="3.3.9" ifid="A9D56E42-3013-4BED-ADD5-18C9523ADA92" options="" tags="" zoom="0.3" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="start screen" tags="" position="1050,150" size="100,100">(set: $sleepCount to 0)
+<tw-storydata name="Maladaptive daydreaming" startnode="54" creator="Twine" creator-version="2.12.0" format="Harlowe" format-version="3.3.9" ifid="A9D56E42-3013-4BED-ADD5-18C9523ADA92" options="" tags="" zoom="0.3" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="start screen" tags="" position="1050,175" size="100,100">(set: $sleepCount to 0)
 (set: $toastDone to false)
 (set: $cerealDone to false)
 (set: $breakfastDone to false)
@@ -365,7 +365,7 @@ z-index:0;
 filter:brightness(0.5);
 opacity: (if: $sleepCount &gt; 2)[0](else:)[1];
 &quot;&gt;
-  &lt;source src=&quot;6797-196071980.mp4&quot; type=&quot;images/video/mp4&quot;&gt;
+  &lt;source src=&quot;images/6797-196071980.mp4&quot; type=&quot;images/video/mp4&quot;&gt;
 &lt;/video&gt;
 
 &lt;!-- SOUND ONLY FIRST 2 LOOPS --&gt;
@@ -621,7 +621,77 @@ letter-spacing:0.5px;
 &lt;/div&gt;
 
 &lt;/div&gt;
-}</tw-passagedata><tw-passagedata pid="7" name="Leave the house" tags="" position="1250,550" size="100,100"></tw-passagedata><tw-passagedata pid="8" name="Cereal" tags="" position="1000,725" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="7" name="Leave the house" tags="" position="1250,550" size="100,100">{
+&lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
+
+&lt;img src=&quot;images/night.jpg&quot; style=&quot;
+position:absolute;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+object-fit:cover;
+filter:brightness(0.6);
+&quot;&gt;
+
+&lt;audio autoplay loop&gt;
+  &lt;source src=&quot;audio/night.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;/audio&gt;
+
+&lt;div style=&quot;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+width:65%;
+max-width:520px;
+text-align:center;
+color:white;
+text-shadow:0 0 14px black;
+background:rgba(0,0,0,0.28);
+padding:16px;
+border-radius:10px;
+font-size:14.5px;
+line-height:1.2;
+&quot;&gt;
+
+You step outside.
+
+&lt;br&gt;&lt;br&gt;
+
+It’s dark.
+
+&lt;br&gt;&lt;br&gt;
+
+The street is quiet.
+
+&lt;br&gt;&lt;br&gt;
+
+You weren’t meant to leave this late.
+
+&lt;br&gt;&lt;br&gt;
+
+You wasted too much of the day.
+
+&lt;br&gt;&lt;br&gt;
+
+Thinking about nothing.
+
+&lt;br&gt;&lt;br&gt;
+
+...
+
+&lt;br&gt;&lt;br&gt;
+
+Try again tomorrow.
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;div class=&quot;choice&quot;&gt;[[Start again-&gt;start screen]] tart]]&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+}</tw-passagedata><tw-passagedata pid="8" name="Cereal" tags="" position="1000,725" size="100,100">{
 &lt;div style=&quot;
 position:fixed;
 top:0;
@@ -2744,7 +2814,77 @@ flex-wrap:wrap;
 
 &lt;/div&gt;
 &lt;/div&gt;
-}</tw-passagedata><tw-passagedata pid="31" name="Trousers" tags="" position="800,475" size="100,100"></tw-passagedata><tw-passagedata pid="32" name="Pull them on" tags="" position="625,625" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="31" name="Trousers" tags="" position="775,475" size="100,100">{
+&lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
+
+&lt;img src=&quot;images/wardrobe.jpg&quot; style=&quot;
+position:absolute;
+width:100vw;
+height:100vh;
+object-fit:cover;
+filter:brightness(0.5);
+&quot;&gt;
+
+&lt;style&gt;
+.choice {
+  padding:10px 20px;
+  border:1px solid white;
+  border-radius:8px;
+  cursor:pointer;
+  color:white;
+  background:rgba(0,0,0,0.25);
+}
+.choice:hover {
+  background:white;
+  color:black;
+}
+&lt;/style&gt;
+
+&lt;div style=&quot;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+width:60%;
+max-width:520px;
+text-align:center;
+color:white;
+text-shadow:0 0 14px black;
+background:rgba(0,0,0,0.25);
+backdrop-filter:blur(3px);
+padding:20px;
+border-radius:10px;
+font-size:17px;
+line-height:1.4;
+&quot;&gt;
+
+You pick up the trousers.
+
+&lt;br&gt;&lt;br&gt;
+
+They feel different.
+
+&lt;br&gt;&lt;br&gt;
+
+Sharper.&lt;br&gt;
+More put together.
+
+&lt;br&gt;&lt;br&gt;
+
+Like you’ve got somewhere to be.
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;div style=&quot;display:flex;gap:15px;justify-content:center;&quot;&gt;
+
+&lt;div class=&quot;choice&quot;&gt;[[Put them on-&gt;Boardroom]]&lt;/div&gt;
+&lt;div class=&quot;choice&quot;&gt;[[Picture the day-&gt;Boardroom]]&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+}</tw-passagedata><tw-passagedata pid="32" name="Pull them on" tags="" position="625,625" size="100,100">{
 &lt;div style=&quot;
 position:fixed;
 top:0;
@@ -2943,7 +3083,7 @@ flex-wrap:wrap;
 
 &lt;/div&gt;
 &lt;/div&gt;
-}</tw-passagedata><tw-passagedata pid="34" name="Order a milkshake" tags="" position="450,750" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="34" name="Order a milkshake" tags="" position="400,975" size="100,100">{
 &lt;div style=&quot;
 position:fixed;
 top:0;
@@ -3051,7 +3191,7 @@ You don’t need to.
 
 &lt;/div&gt;
 &lt;/div&gt;
-}</tw-passagedata><tw-passagedata pid="35" name="Order a soda float" tags="" position="450,900" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="35" name="Order a soda float" tags="" position="600,950" size="100,100">{
 &lt;div style=&quot;
 position:fixed;
 top:0;
@@ -3149,14 +3289,14 @@ gap:20px;
 flex-wrap:wrap;
 &quot;&gt;
 
-&lt;div class=&quot;choice&quot;&gt;[[Lean in a little-&gt;Lean in for a kiss]]&lt;/div&gt;
+&lt;div class=&quot;choice&quot;&gt;[[Lean in a for a kiss-&gt;Lean in for a kiss]]&lt;/div&gt;
 &lt;div class=&quot;choice&quot;&gt;[[Tell a joke-&gt;Tell Joke]]&lt;/div&gt;
 
 &lt;/div&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
-}</tw-passagedata><tw-passagedata pid="36" name="Lean in for a kiss" tags="" position="300,600" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="36" name="Lean in for a kiss" tags="" position="225,925" size="100,100">{
 &lt;div style=&quot;
 position:fixed;
 top:0;
@@ -3253,7 +3393,7 @@ flex-wrap:wrap;
 
 &lt;/div&gt;
 &lt;/div&gt;
-}</tw-passagedata><tw-passagedata pid="37" name="Tell Joke" tags="" position="450,600" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="37" name="Tell Joke" tags="" position="400,725" size="100,100">{
 &lt;div style=&quot;
 position:fixed;
 top:0;
@@ -3354,7 +3494,7 @@ flex-wrap:wrap;
 
 &lt;/div&gt;
 &lt;/div&gt;
-}</tw-passagedata><tw-passagedata pid="38" name="Apologise" tags="" position="225,450" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="38" name="Apologise" tags="" position="175,725" size="100,100">{
 (set: $dressedDone to true)
 
 &lt;div style=&quot;
@@ -3443,7 +3583,7 @@ You’ve lost so much time.
 
 &lt;/div&gt;
 &lt;/div&gt;
-}</tw-passagedata><tw-passagedata pid="39" name="Rain" tags="" position="375,450" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="39" name="Rain" tags="" position="275,600" size="100,100">{
 (set: $dressedDone to true)
 
 &lt;div style=&quot;
@@ -3532,7 +3672,7 @@ You’ve lost so much time.
 
 &lt;/div&gt;
 &lt;/div&gt;
-}</tw-passagedata><tw-passagedata pid="40" name="Ditch" tags="" position="200,1025" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="40" name="Ditch" tags="" position="275,1175" size="100,100">{
 &lt;div style=&quot;
 position:fixed;
 top:0;
@@ -3642,7 +3782,7 @@ You don’t want this to end.
 
 &lt;/div&gt;
 &lt;/div&gt;
-}</tw-passagedata><tw-passagedata pid="41" name="Walk Home" tags="" position="375,1025" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="41" name="Walk Home" tags="" position="550,1125" size="100,100">{
 (set: $dressedDone to true)
 
 &lt;div style=&quot;
@@ -3731,7 +3871,7 @@ You’ve lost so much time.
 
 &lt;/div&gt;
 &lt;/div&gt;
-}</tw-passagedata><tw-passagedata pid="42" name="Jeans End" tags="" position="200,1150" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="42" name="Jeans End" tags="" position="375,1400" size="100,100">{
 (set: $dressedDone to true)
 
 &lt;div style=&quot;
@@ -3817,6 +3957,898 @@ You’ve lost so much time.
 &lt;br&gt;&lt;br&gt;
 
 &lt;div class=&quot;choice&quot;&gt;[[Back-&gt;Get out of bed]]&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+}</tw-passagedata><tw-passagedata pid="43" name="Boardroom" tags="" position="475,550" size="100,100">{
+&lt;style&gt;
+body {
+background-image: url(&quot;images/boardroom.jpg&quot;);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+&lt;/style&gt;
+
+&lt;audio autoplay loop&gt;
+  &lt;source src=&quot;audio/boardroom.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;/audio&gt;
+
+Phones ringing.
+
+&lt;br&gt;&lt;br&gt;
+
+People talking over each other.
+
+&lt;br&gt;&lt;br&gt;
+
+Assistants rushing in and out.
+
+&lt;br&gt;&lt;br&gt;
+
+No one’s in control.
+
+&lt;br&gt;&lt;br&gt;
+
+You stand there.
+
+&lt;br&gt;&lt;br&gt;
+
+They look at you.
+
+&lt;br&gt;&lt;br&gt;
+
+This is it.
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;div class=&quot;choice&quot;&gt;[[We need to cut staff-&gt;Fire Decision]]&lt;/div&gt;
+&lt;div class=&quot;choice&quot;&gt;[[We can save everyone-&gt;Compassion]]&lt;/div&gt;
+}</tw-passagedata><tw-passagedata pid="44" name="Compassion" tags="" position="450,400" size="100,100">{
+&lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
+
+&lt;img src=&quot;images/boardroom.jpg&quot; style=&quot;
+position:absolute;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+object-fit:cover;
+filter:brightness(0.5);
+&quot;&gt;
+
+&lt;audio autoplay loop&gt;
+  &lt;source src=&quot;audio/boardroom.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;/audio&gt;
+
+&lt;div style=&quot;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+width:65%;
+max-width:520px;
+text-align:center;
+color:white;
+text-shadow:0 0 14px black;
+background:rgba(0,0,0,0.32);
+padding:16px;
+border-radius:10px;
+font-size:14.5px;
+line-height:1.2;
+&quot;&gt;
+
+You shake your head.
+
+&lt;br&gt;&lt;br&gt;
+
+“No one loses their job.”
+
+&lt;br&gt;&lt;br&gt;
+
+For a second—
+
+&lt;br&gt;&lt;br&gt;
+
+the room softens.
+
+&lt;br&gt;&lt;br&gt;
+
+People relax.
+
+&lt;br&gt;&lt;br&gt;
+
+You feel it.
+
+&lt;br&gt;&lt;br&gt;
+
+You did the right thing.
+
+&lt;br&gt;&lt;br&gt;
+
+Then the phones start ringing again.
+
+&lt;br&gt;&lt;br&gt;
+
+The numbers don’t add up.
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;div class=&quot;choice&quot;&gt;[[Move money around-&gt;Compassion Fix]]&lt;/div&gt;
+&lt;div class=&quot;choice&quot;&gt;[[Stand by your decision-&gt;Compassion Hold]]&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+}</tw-passagedata><tw-passagedata pid="45" name="Fire Decision" tags="" position="225,450" size="100,100">{
+&lt;div style=&quot;
+position:fixed;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+overflow:hidden;
+&quot;&gt;
+
+&lt;img src=&quot;images/boardroom.jpg&quot; style=&quot;
+position:absolute;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+object-fit:cover;
+object-position:center;
+filter:brightness(0.55);
+&quot;&gt;
+
+&lt;audio autoplay loop&gt;
+  &lt;source src=&quot;audio/boardroom.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;/audio&gt;
+
+&lt;style&gt;
+.choice {
+  padding:10px 20px;
+  border:1px solid white;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.2s;
+  color:white;
+  background:rgba(0,0,0,0.25);
+}
+
+.choice:hover {
+  background:white;
+  color:black;
+  transform:scale(1.05);
+}
+
+tw-link {
+  text-decoration:none;
+  color:inherit;
+}
+&lt;/style&gt;
+
+&lt;div style=&quot;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+width:60%;
+max-width:520px;
+text-align:center;
+color:white;
+text-shadow:0 0 14px black;
+background:rgba(0,0,0,0.28);
+backdrop-filter:blur(3px);
+padding:20px;
+border-radius:10px;
+font-size:17px;
+line-height:1.4;
+&quot;&gt;
+
+You know what has to be done.
+
+&lt;br&gt;&lt;br&gt;
+
+The room is waiting.
+
+&lt;br&gt;&lt;br&gt;
+
+But now you have to decide who.
+
+&lt;br&gt;&lt;br&gt;
+
+Margaret.
+
+&lt;br&gt;&lt;br&gt;
+
+She’s been here for over 25 years.&lt;br&gt;
+Knows the company inside out.&lt;br&gt;
+Like a mother to the place.
+
+&lt;br&gt;&lt;br&gt;
+
+Or Peter.
+
+&lt;br&gt;&lt;br&gt;
+
+Only here three years.&lt;br&gt;
+Young. Eager.&lt;br&gt;
+Quick to learn.
+
+&lt;br&gt;&lt;br&gt;
+
+Both of them are looking at you.
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;div style=&quot;display:flex;justify-content:center;gap:15px;flex-wrap:wrap;&quot;&gt;
+
+&lt;div class=&quot;choice&quot;&gt;[[Let Margaret go-&gt;Fire Margaret]]&lt;/div&gt;
+&lt;div class=&quot;choice&quot;&gt;[[Let Peter go-&gt;Fire Peter]]&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+}</tw-passagedata><tw-passagedata pid="46" name="Fire Margaret" tags="" position="375,275" size="100,100">{
+&lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
+
+&lt;img src=&quot;images/boardroom2.jpg&quot; style=&quot;
+position:absolute;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+object-fit:cover;
+filter:brightness(0.4);
+&quot;&gt;
+
+&lt;audio autoplay loop&gt;
+  &lt;source src=&quot;audio/ruthless.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;/audio&gt;
+
+&lt;div style=&quot;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+width:65%;
+max-width:520px;
+text-align:center;
+color:white;
+text-shadow:0 0 14px black;
+background:rgba(0,0,0,0.32);
+padding:20px;
+border-radius:10px;
+font-size:15px;
+line-height:1.3;
+&quot;&gt;
+
+You look at Margaret.
+
+&lt;br&gt;&lt;br&gt;
+
+For a second, you almost stop.
+
+&lt;br&gt;&lt;br&gt;
+
+She’s been here longer than anyone.
+
+&lt;br&gt;&lt;br&gt;
+
+Then—
+
+&lt;br&gt;&lt;br&gt;
+
+“Margaret… we’re letting you go.”
+
+&lt;br&gt;&lt;br&gt;
+
+Silence.
+
+&lt;br&gt;&lt;br&gt;
+
+She nods.
+
+&lt;br&gt;&lt;br&gt;
+
+Like she already knew.
+
+&lt;br&gt;&lt;br&gt;
+
+No fight.
+
+&lt;br&gt;&lt;br&gt;
+
+Just a woman gathering 25 years into one small handbag.
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;div class=&quot;choice&quot;&gt;[[Push forward-&gt;Ruthless Deal]]&lt;/div&gt;
+&lt;div class=&quot;choice&quot;&gt;[[It’s not enough-&gt;Fire Both]]&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+}</tw-passagedata><tw-passagedata pid="47" name="Fire Peter" tags="" position="200,250" size="100,100">{
+&lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
+
+&lt;img src=&quot;images/boardroom2.jpg&quot; style=&quot;
+position:absolute;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+object-fit:cover;
+filter:brightness(0.4);
+&quot;&gt;
+
+&lt;audio autoplay loop&gt;
+  &lt;source src=&quot;audio/ruthless.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;/audio&gt;
+
+&lt;div style=&quot;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+width:65%;
+max-width:520px;
+text-align:center;
+color:white;
+text-shadow:0 0 14px black;
+background:rgba(0,0,0,0.32);
+padding:20px;
+border-radius:10px;
+font-size:15px;
+line-height:1.3;
+&quot;&gt;
+
+You look at Peter.
+
+&lt;br&gt;&lt;br&gt;
+
+He sits up straighter.
+
+&lt;br&gt;&lt;br&gt;
+
+Still trying to prove himself.
+
+&lt;br&gt;&lt;br&gt;
+
+Then—
+
+&lt;br&gt;&lt;br&gt;
+
+“Peter… we’re letting you go.”
+
+&lt;br&gt;&lt;br&gt;
+
+He freezes.
+
+&lt;br&gt;&lt;br&gt;
+
+Nods too quickly.
+
+&lt;br&gt;&lt;br&gt;
+
+Like if he handles it right, you might change your mind.
+
+&lt;br&gt;&lt;br&gt;
+
+You don’t.
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;div class=&quot;choice&quot;&gt;[[Push forward-&gt;Ruthless Deal]]&lt;/div&gt;
+&lt;div class=&quot;choice&quot;&gt;[[It’s not enough-&gt;Fire Both]]&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+}</tw-passagedata><tw-passagedata pid="48" name="Ruthless Deal" tags="" position="450,100" size="100,100">{
+&lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
+
+&lt;img src=&quot;images/deal.jpg&quot; style=&quot;
+position:absolute;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+object-fit:cover;
+filter:brightness(0.6);
+&quot;&gt;
+
+&lt;audio autoplay loop&gt;
+  &lt;source src=&quot;audio/success.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;/audio&gt;
+
+&lt;div style=&quot;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+width:65%;
+max-width:520px;
+text-align:center;
+color:white;
+text-shadow:0 0 14px black;
+background:rgba(0,0,0,0.25);
+padding:22px;
+border-radius:10px;
+font-size:16px;
+line-height:1.35;
+&quot;&gt;
+
+The deal goes through.
+
+&lt;br&gt;&lt;br&gt;
+
+Clean.
+
+&lt;br&gt;&lt;br&gt;
+
+Controlled.
+
+&lt;br&gt;&lt;br&gt;
+
+The company stays afloat.
+
+&lt;br&gt;&lt;br&gt;
+
+You stay in power.
+
+&lt;br&gt;&lt;br&gt;
+
+No one questions you now.
+
+&lt;br&gt;&lt;br&gt;
+
+They listen.
+
+&lt;br&gt;&lt;br&gt;
+
+But no one meets your eyes.
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;div class=&quot;choice&quot;&gt;[[Get back to work-&gt;Trousers End]]&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+}</tw-passagedata><tw-passagedata pid="49" name="Fire Both" tags="" position="250,75" size="100,100">{
+&lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
+
+&lt;img src=&quot;images/deal.jpg&quot; style=&quot;
+position:absolute;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+object-fit:cover;
+filter:brightness(0.6);
+&quot;&gt;
+
+&lt;audio autoplay loop&gt;
+  &lt;source src=&quot;audio/success.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;/audio&gt;
+
+&lt;div style=&quot;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+width:65%;
+max-width:500px;
+text-align:center;
+color:white;
+text-shadow:0 0 14px black;
+background:rgba(0,0,0,0.28);
+padding:14px;
+border-radius:10px;
+font-size:14px;
+line-height:1.2;
+&quot;&gt;
+
+You look at them.
+
+&lt;br&gt;&lt;br&gt;
+
+Margaret. Peter.
+
+&lt;br&gt;&lt;br&gt;
+
+You could stop.
+
+&lt;br&gt;&lt;br&gt;
+
+You don’t.
+
+&lt;br&gt;&lt;br&gt;
+
+“Both of you.”
+
+&lt;br&gt;&lt;br&gt;
+
+Silence.
+
+&lt;br&gt;&lt;br&gt;
+
+They leave.
+
+&lt;br&gt;&lt;br&gt;
+
+No questions.
+
+&lt;br&gt;&lt;br&gt;
+
+Just gone.
+
+&lt;br&gt;&lt;br&gt;
+
+The deal goes through.
+
+&lt;br&gt;&lt;br&gt;
+
+Everything changes.
+
+&lt;br&gt;&lt;br&gt;
+
+Your life—different now.
+
+&lt;br&gt;&lt;br&gt;
+
+You have control.
+
+&lt;br&gt;&lt;br&gt;
+
+...
+
+&lt;br&gt;&lt;br&gt;
+
+You don’t think about them.
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;div class=&quot;choice&quot;&gt;[[Remain in control-&gt;Trousers End]]&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+}</tw-passagedata><tw-passagedata pid="50" name="Trousers End" tags="" position="650,25" size="100,100">{
+&lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
+
+&lt;img src=&quot;images/wardrobe.jpg&quot; style=&quot;
+position:absolute;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+object-fit:cover;
+object-position:center;
+filter:brightness(0.55);
+&quot;&gt;
+
+&lt;div style=&quot;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+width:60%;
+max-width:520px;
+text-align:center;
+color:white;
+text-shadow:0 0 14px black;
+background:rgba(0,0,0,0.28);
+backdrop-filter:blur(3px);
+padding:20px;
+border-radius:10px;
+font-size:17px;
+line-height:1.4;
+&quot;&gt;
+
+You blink.
+
+&lt;br&gt;&lt;br&gt;
+
+...
+
+&lt;br&gt;&lt;br&gt;
+
+You’re still standing there.
+
+&lt;br&gt;&lt;br&gt;
+
+Trousers half on.
+
+&lt;br&gt;&lt;br&gt;
+
+Nothing’s changed.
+
+&lt;br&gt;&lt;br&gt;
+
+No boardroom.
+
+&lt;br&gt;&lt;br&gt;
+
+No deal.
+
+&lt;br&gt;&lt;br&gt;
+
+No one watching you.
+
+&lt;br&gt;&lt;br&gt;
+
+Just your room.
+
+&lt;br&gt;&lt;br&gt;
+
+You’re still here.
+
+&lt;br&gt;&lt;br&gt;
+
+You were supposed to get dressed.
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;div class=&quot;choice&quot;&gt;[[Back-&gt;Get dressed]]&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+}</tw-passagedata><tw-passagedata pid="51" name="Compassion Fix" tags="" position="650,175" size="100,100">{
+&lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
+
+&lt;img src=&quot;images/boardroom2.jpg&quot; style=&quot;
+position:absolute;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+object-fit:cover;
+filter:brightness(0.4);
+&quot;&gt;
+
+&lt;audio autoplay loop&gt;
+  &lt;source src=&quot;audio/ruthless.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;/audio&gt;
+
+&lt;div style=&quot;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+width:65%;
+max-width:520px;
+text-align:center;
+color:white;
+text-shadow:0 0 14px black;
+background:rgba(0,0,0,0.32);
+padding:16px;
+border-radius:10px;
+font-size:14.5px;
+line-height:1.2;
+&quot;&gt;
+
+You move money around.
+
+&lt;br&gt;&lt;br&gt;
+
+Shift things.
+
+&lt;br&gt;&lt;br&gt;
+
+Promise it will work.
+
+&lt;br&gt;&lt;br&gt;
+
+It almost does.
+
+&lt;br&gt;&lt;br&gt;
+
+Then it doesn’t.
+
+&lt;br&gt;&lt;br&gt;
+
+The deal slips.
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;div class=&quot;choice&quot;&gt;[[Keep trying-&gt;Compassion Collapse]]&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+}</tw-passagedata><tw-passagedata pid="52" name="Compassion Hold" tags="" position="650,350" size="100,100">{
+&lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
+
+&lt;img src=&quot;images/boardroom2.jpg&quot; style=&quot;
+position:absolute;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+object-fit:cover;
+filter:brightness(0.4);
+&quot;&gt;
+
+&lt;audio autoplay loop&gt;
+  &lt;source src=&quot;audio/ruthless.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;/audio&gt;
+
+&lt;div style=&quot;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+width:65%;
+max-width:520px;
+text-align:center;
+color:white;
+text-shadow:0 0 14px black;
+background:rgba(0,0,0,0.32);
+padding:16px;
+border-radius:10px;
+font-size:14.5px;
+line-height:1.2;
+&quot;&gt;
+
+You stand firm.
+
+&lt;br&gt;&lt;br&gt;
+
+No cuts.
+
+&lt;br&gt;&lt;br&gt;
+
+No changes.
+
+&lt;br&gt;&lt;br&gt;
+
+The room turns.
+
+&lt;br&gt;&lt;br&gt;
+
+Pressure builds.
+
+&lt;br&gt;&lt;br&gt;
+
+You feel it slipping.
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;div class=&quot;choice&quot;&gt;[[Hold on-&gt;Compassion Collapse]]&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+}</tw-passagedata><tw-passagedata pid="53" name="Compassion Collapse" tags="" position="800,300" size="100,100">{
+&lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
+
+&lt;img src=&quot;images/boardroom2.jpg&quot; style=&quot;
+position:absolute;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+object-fit:cover;
+filter:brightness(0.35);
+&quot;&gt;
+
+&lt;audio autoplay loop&gt;
+  &lt;source src=&quot;audio/ruthless.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;/audio&gt;
+
+&lt;div style=&quot;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+width:65%;
+max-width:520px;
+text-align:center;
+color:white;
+text-shadow:0 0 14px black;
+background:rgba(0,0,0,0.32);
+padding:16px;
+border-radius:10px;
+font-size:14.5px;
+line-height:1.2;
+&quot;&gt;
+
+The deal is gone.
+
+&lt;br&gt;&lt;br&gt;
+
+Silence.
+
+&lt;br&gt;&lt;br&gt;
+
+Not calm.
+
+&lt;br&gt;&lt;br&gt;
+
+Not relief.
+
+&lt;br&gt;&lt;br&gt;
+
+Just… empty.
+
+&lt;br&gt;&lt;br&gt;
+
+You tried to save everyone.
+
+&lt;br&gt;&lt;br&gt;
+
+Now no one is safe.
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;div class=&quot;choice&quot;&gt;[[Pack your things-&gt;Trousers End]]&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+}</tw-passagedata><tw-passagedata pid="54" name="pre start screen" tags="" position="1050,25" size="100,100">{
+&lt;div style=&quot;position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;&quot;&gt;
+
+&lt;img src=&quot;dreamroom.jpg&quot; style=&quot;
+position:absolute;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+object-fit:cover;
+filter:brightness(0.6);
+&quot;&gt;
+
+&lt;div style=&quot;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+width:65%;
+max-width:520px;
+text-align:center;
+color:white;
+text-shadow:0 0 18px black;
+background:rgba(0,0,0,0.35);
+padding:20px;
+border-radius:10px;
+font-size:15px;
+line-height:1.3;
+&quot;&gt;
+
+Maladaptive Daydreaming Experience
+
+&lt;br&gt;&lt;br&gt;
+
+Before you begin—
+
+&lt;br&gt;&lt;br&gt;
+
+Turn your volume on.
+
+&lt;br&gt;&lt;br&gt;
+
+Click the options to progress.
+
+&lt;br&gt;&lt;br&gt;
+
+Your choices will feel important.
+
+&lt;br&gt;&lt;br&gt;
+
+They are not.
+
+&lt;br&gt;&lt;br&gt;
+
+You may find yourself repeating things.
+
+&lt;br&gt;&lt;br&gt;
+
+That is intentional.
+
+&lt;br&gt;&lt;br&gt;
+
+Just follow it.
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;div class=&quot;choice&quot;&gt;[[Begin-&gt;start screen]] tart]]&lt;/div&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
